@@ -1,0 +1,17 @@
+{
+  "name": "oval-coming-soon",
+  "private": true,
+  "description": "The placeholder page for oval.vote",
+  "scripts": {
+    "build": "rm -rf dist && mkdir -p dist/brand && cp index.html dist/ && cp -R node_modules/@oval-vote/brand/tokens node_modules/@oval-vote/brand/css node_modules/@oval-vote/brand/logo dist/brand/",
+    "preview": "npm run build && python3 -m http.server 8000 --directory dist",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run format:check && npm run build",
+    "test": "npm run check"
+  },
+  "devDependencies": {
+    "@oval-vote/brand": "0.1.1",
+    "prettier": "3.9.10"
+  }
+}
